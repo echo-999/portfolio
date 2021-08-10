@@ -4,15 +4,25 @@ import { JuniorHighSchool, SeniorHighSchool, College } from './components/Educat
 import SkillCard from './components/SkillCard';
 
 export default function Landing() {
+  const skillsArr = [
+    {title: 'HTML', description: 'HyperText Markup Language', proficiency: 'Working Proficiency', level: 2},
+    {title: 'CSS', description: 'Cascading Style Sheets', proficiency: 'Basic Proficiency', level: 1},
+    {title: 'JS', description: 'JavaScript Language', proficiency: 'Working Proficiency', level: 2},
+    {title: 'Material - UI', description: 'A Popular React UI Framework', proficiency: 'Working Proficiency', level: 2},
+    {title: 'Tailwind CSS', description: 'A Utility-First CSS Framework', proficiency: 'Basic Proficiency', level: 1},
+    {title: 'React JS', description: 'A Front-End JavaScript Library', proficiency: 'Working Proficiency', level: 2}
+  ]
   return (
     <div className='overflow-x-hidden'>
-      <header className='fixed top-0 h-14 w-screen bg-cxgreen-light shadow-lg'>Loading</header>
+      <header className='fixed top-0 h-14 w-screen bg-cxgreen-light shadow-cx-dark z-10'>
+        my childreeeeeen
+      </header>
       <div className='flex flex-col mt-14'>
         {/* -----Introduction Section----- */}
         <section className='w-full h-96 p-7 bg-gradient-to-b from-cxgreen via-cxgreen to-cxgreen-light grid grid-cols-2 grid-rows-4 items-center justify-center gap-x-20'>
-          <div className='text-right row-start-2 text-white text-6xl'>Hi, I'm Jerico!</div>
-          <div className='text-right row-start-3 text-white text-4xl'>And I'm here to tell my story</div>
-          <div className='text-right row-start-4 text-white text-xl self-start'>Let's Talk</div>
+          <p className='text-right row-start-2 text-white text-6xl'>Hi, I'm Jerico!</p>
+          <p className='text-right row-start-3 text-white text-4xl'>And I'm here to tell my story</p>
+          <p className='text-right row-start-4 text-white text-xl self-start'>Let's Talk</p>
           <div className='row-span-4 col-start-2'>
             <div className='border-2 rounded-md border-cxred h-full bg-white'>picture here</div>
           </div>
@@ -21,11 +31,11 @@ export default function Landing() {
         {/* -----Education Section----- */}
         <section className='w-screen p-7 bg-gradient-to-b from-cxgreen-light via-cxgreen-light to-cxgreen flex flex-col'>
           {/* Introduction Text */}
-          <div className='relative -top-12 text-center text-cxdark text-2xl font-medium'>
+          <p className='relative -top-12 text-center text-cxdark text-2xl font-medium'>
             I am a 3rd year student pursuing BS in Computer Engineering,<br />
             specializing in web development,<br />
             at the Polytechnic University of the Philippines - Manila
-          </div>
+          </p>
           {/* Education container */}
           <div className='w-full grid grid-cols-4 justify-center'>
               <JuniorHighSchool />
@@ -36,10 +46,12 @@ export default function Landing() {
         {/* -----End of Education----- */}
         {/* -----Skills Section----- */}
         <section className='w-screen p-7 pt-12 bg-cxgreen flex flex-col items-center'>
-          <div className='text-3xl text-white'>Development Skills</div>
+          <p className='text-3xl text-white mb-10'>Development Skills</p>
           {/* Skills container */}
-          <div className='flex flex-row flex-wrap'>
-            <SkillCard />
+          <div className='flex flex-row flex-wrap gap-x-6 gap-y-9 items-center justify-center'>
+            {skillsArr.map((item, index) => (
+              <SkillCard key={index} title={item.title} description={item.description} proficiency={item.proficiency} level={item.level} />
+            ))}
           </div>
         </section>
         {/* -----End of Skills----- */}

@@ -13,12 +13,16 @@ module.exports = {
         },
         cxdark: '#021C1E',
         cxred: '#802A30'
-      }
-    },
-    
+      },
+      boxShadow: {
+        'cx-dark': '0 7px 10px 5px #004445'
+      },
+    }, 
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ['hover', 'group-hover']
+    },
   },
   plugins: [],
 }
