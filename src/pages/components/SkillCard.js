@@ -1,13 +1,14 @@
 import React from 'react';
 
 export default function SkillCard(props) {
-  const { title, description, proficiency, level } = props;
+  const { title, description, proficiency, level, url } = props;
+  console.log(url)
   return (
     <div className='border-2 border-cxred rounded-3xl shadow-cx-dark transform rotate-12 hover:rotate-0  bg-cxgreen-light flex flex-col flex-wrap gap-2 px-8 py-2 m-2 items-center'>
-      <p className='text-3xl text-cxdark font-semibold'>{title}</p>
-      <p className='mb-8 text-cxdark text-lg'>{description}</p>
+      <a href={url} target='_blank' title={`${title} website`} className='text-3xl text-cxdark font-semibold hover:underline'>{title}</a>
+      <p className='mb-8 text-cxdark text-lg cursor-default'>{description}</p>
       <ProficiencyBar level={level} />
-      <p className='italic text-sm mb-1'>{proficiency}</p>
+      <p className='italic text-sm mb-1 cursor-default'>{proficiency}</p>
     </div>
   )
 }

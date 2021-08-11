@@ -5,12 +5,12 @@ import SkillCard from './components/SkillCard';
 
 export default function Landing() {
   const skillsArr = [
-    {title: 'HTML', description: 'HyperText Markup Language', proficiency: 'Working Proficiency', level: 2},
-    {title: 'CSS', description: 'Cascading Style Sheets', proficiency: 'Basic Proficiency', level: 1},
-    {title: 'JS', description: 'JavaScript Language', proficiency: 'Working Proficiency', level: 2},
-    {title: 'Material - UI', description: 'A Popular React UI Framework', proficiency: 'Working Proficiency', level: 2},
-    {title: 'Tailwind CSS', description: 'A Utility-First CSS Framework', proficiency: 'Basic Proficiency', level: 1},
-    {title: 'React JS', description: 'A Front-End JavaScript Library', proficiency: 'Working Proficiency', level: 2}
+    {title: 'HTML', description: 'HyperText Markup Language', proficiency: 'Working Proficiency', level: 2, url: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
+    {title: 'CSS', description: 'Cascading Style Sheets', proficiency: 'Basic Proficiency', level: 1, url: 'https://developer.mozilla.org/en-US/docs/Web/CSS'},
+    {title: 'JS', description: 'JavaScript Language', proficiency: 'Working Proficiency', level: 2, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'},
+    {title: 'Material - UI', description: 'A Popular React UI Framework', proficiency: 'Working Proficiency', level: 2, url: 'https://material-ui.com/'},
+    {title: 'Tailwind CSS', description: 'A Utility-First CSS Framework', proficiency: 'Basic Proficiency', level: 1, url: 'https://tailwindcss.com/'},
+    {title: 'React JS', description: 'A Front-End JavaScript Library', proficiency: 'Working Proficiency', level: 2, url: 'https://reactjs.org/'}
   ]
   return (
     <div className='overflow-x-hidden'>
@@ -29,7 +29,7 @@ export default function Landing() {
         </section>
         {/* -----End of Introduction----- */}
         {/* -----Education Section----- */}
-        <section className='w-screen p-7 bg-gradient-to-b from-cxgreen-light via-cxgreen-light to-cxgreen flex flex-col'>
+        <section className='w-screen px-7 py-44 bg-gradient-to-b from-cxgreen-light via-cxgreen-light to-cxgreen flex flex-col'>
           {/* Introduction Text */}
           <p className='relative -top-12 text-center text-cxdark text-2xl font-medium'>
             I am a 3rd year student pursuing BS in Computer Engineering,<br />
@@ -46,11 +46,11 @@ export default function Landing() {
         {/* -----End of Education----- */}
         {/* -----Skills Section----- */}
         <section className='w-screen p-7 pt-12 bg-cxgreen flex flex-col items-center'>
-          <p className='text-3xl text-white mb-10'>Development Skills</p>
+          <p className='text-3xl text-white mb-14'>Development Skills</p>
           {/* Skills container */}
           <div className='flex flex-row flex-wrap gap-x-6 gap-y-9 items-center justify-center'>
             {skillsArr.map((item, index) => (
-              <SkillCard key={index} title={item.title} description={item.description} proficiency={item.proficiency} level={item.level} />
+              <SkillCard key={index} title={item.title} description={item.description} proficiency={item.proficiency} level={item.level} url={item.url} />
             ))}
           </div>
         </section>
